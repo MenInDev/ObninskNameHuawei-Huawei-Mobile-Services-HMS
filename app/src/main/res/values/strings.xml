@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Obninsk.Name</string>
+
+    <string name="tab_news">Новости</string>
+    <string name="tab_poster">Афиша</string>
+    <string name="tab_gallery">Галерея</string>
+    <string name="tab_more">О нас</string>
+
+    <string name="news_all">Главные</string>
+    <string name="news_hot">Важные</string>
+    <string name="news_article">Статьи</string>
+    <string name="news_categories">Категории</string>
+
+    <string name="search_hint">Поиск</string>
+
+    <string name="news_detail_top_info_template">%1$s &#183; %2$s</string>
+    <string name="news_detail_author">Автор публикации:</string>
+
+    <string name="watch_poster">Смотреть афишу</string>
+    <string name="watch_news">Смотреть новость</string>
+</resources>

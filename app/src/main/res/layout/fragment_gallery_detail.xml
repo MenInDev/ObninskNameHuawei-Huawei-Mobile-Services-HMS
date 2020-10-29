@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pro.midev.obninsknamehuawei.ui.view.HackyProblematicViewGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/wrapper"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <com.github.chrisbanes.photoview.PhotoView
+        android:id="@+id/ivImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:navigationIcon="@drawable/ic_round_arrow_back" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textWhite"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btnNews"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/button_white"
+            android:drawableStart="@drawable/ic_news"
+            android:drawablePadding="12dp"
+            android:drawableTint="@color/black"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:paddingStart="12dp"
+            android:paddingEnd="20dp"
+            android:text="@string/watch_news"
+            android:textAllCaps="false"
+            android:textColor="@color/textPrimary"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+</pro.midev.obninsknamehuawei.ui.view.HackyProblematicViewGroup>

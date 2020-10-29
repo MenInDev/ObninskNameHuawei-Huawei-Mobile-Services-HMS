@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="196dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="24dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="24dp"
+    android:foreground="?attr/selectableItemBackground"
+    app:cardBackgroundColor="@color/colorBackgroundPrimary"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@color/textPrimary"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/textSecondary"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/btnWatch"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/button_accent"
+            android:drawableStart="@drawable/ic_poster"
+            android:drawablePadding="12dp"
+            android:drawableTint="@color/white"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:paddingStart="12dp"
+            android:paddingEnd="20dp"
+            android:text="@string/watch_poster"
+            android:textAllCaps="false"
+            android:textColor="@color/textWhite"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
