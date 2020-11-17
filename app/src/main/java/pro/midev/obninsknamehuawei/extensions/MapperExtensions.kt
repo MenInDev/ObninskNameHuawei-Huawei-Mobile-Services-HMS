@@ -26,7 +26,9 @@ fun MutableList<ArticleResponse>.fromArticleToNewsHuman(): MutableList<NewsHuman
     return this.map {
         NewsHuman(
             id = (it.id ?: 0L).toString(),
-            title = it.title.orEmpty(),
+            title = if (!it.title.orEmpty()
+                    .contains("????")
+            ) it.title.orEmpty() else "Статья #${it.id}",
             text = it.src.orEmpty(),
             date = it.date?.convertToNewsDate().orEmpty(),
             image = it.image.orEmpty()
