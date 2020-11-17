@@ -14,6 +14,7 @@ import pro.midev.obninsknamehuawei.extensions.addSystemTopPadding
 import pro.midev.obninsknamehuawei.models.human.GalleryHuman
 import kotlinx.android.synthetic.main.fragment_gallery.*
 import kotlinx.android.synthetic.main.view_loading.*
+import timber.log.Timber
 
 class GalleryFragment : BaseFragment(R.layout.fragment_gallery), GalleryView {
 

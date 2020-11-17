@@ -1,5 +1,6 @@
 package pro.midev.obninsknamehuawei.ui.main.poster.map
 
+import android.Manifest
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
@@ -17,6 +18,7 @@ import com.huawei.hms.maps.model.BitmapDescriptorFactory
 import com.huawei.hms.maps.model.LatLng
 import com.huawei.hms.maps.model.Marker
 import com.huawei.hms.maps.model.MarkerOptions
+import com.tbruyelle.rxpermissions3.RxPermissions
 import kotlinx.android.synthetic.main.fragment_map.*
 
 class UnitsFragment : BaseFragment(R.layout.fragment_map), UnitsView,
@@ -31,6 +33,8 @@ class UnitsFragment : BaseFragment(R.layout.fragment_map), UnitsView,
 
     private val markers: MutableMap<Marker?, UnitHuman> = mutableMapOf()
 
+    private val rxPermissions by lazy { RxPermissions(this) }
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
@@ -39,7 +43,9 @@ class UnitsFragment : BaseFragment(R.layout.fragment_map), UnitsView,
         mapView.getMapAsync {
             map = it
             moveToPoint(map)
+            map?.uiSettings?.isZoomControlsEnabled = false
             presenter.loadUnits()
+            checkLocationPermission()
         }
 
         vgTools.addSystemBottomPadding()
@@ -68,6 +74,20 @@ class UnitsFragment : BaseFragment(R.layout.fragment_map), UnitsView,
 
         val snapHelper = LinearSnapHelper()
         snapHelper.attachToRecyclerView(rvUnits)
+    }
+
+    private fun checkLocationPermission() {
+        rxPermissions
+            .request(
+                Manifest.permission.ACCESS_COARSE_LOCATION,
+                Manifest.permission.ACCESS_FINE_LOCATION
+            )
+            .subscribe {
+                if (it) {
+                    map?.isMyLocationEnabled = true
+                    map?.uiSettings?.isMyLocationButtonEnabled = false
+                }
+            }
     }
 
     override fun showMarkers(units: MutableList<UnitHuman>) {

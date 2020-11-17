@@ -12,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId "pro.midev.obninskname.huawei"
-        minSdkVersion 23
+        minSdkVersion 26
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -20,6 +20,15 @@ android {
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("oname.jks")
+            storePassword "hVIggvFvcg"
+            keyAlias "obninskNameHuaweiAlias"
+            keyPassword "hVIggvFvcg"
+        }
     }
 
     buildTypes {
@@ -33,6 +42,7 @@ android {
             buildConfigField "String", "MAP_API_KEY", '"CgB6e3x9Wo6s7nCV+3lbssmZs2m5uBNhciL2E3yHZriRzLRoxENORud4P8bTJRl4pEhLEfud3LSzivaE0bp9BQzh"'
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
     compileOptions {
