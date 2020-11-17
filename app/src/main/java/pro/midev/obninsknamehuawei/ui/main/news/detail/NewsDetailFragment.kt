@@ -47,6 +47,15 @@ class NewsDetailFragment : BaseFragment(R.layout.fragment_news_detail), NewsDeta
             tvAuthor.text = news.author
             tvReviews.text = news.reviews.toString()
         }
+
+        toolbar.setOnMenuItemClickListener {
+            when (it.itemId) {
+                R.id.actionTranslate -> {
+                    presenter.translate(news)
+                }
+            }
+            return@setOnMenuItemClickListener true
+        }
     }
 
     override fun toggleLoading(show: Boolean) {

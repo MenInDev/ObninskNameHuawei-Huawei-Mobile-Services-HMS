@@ -12,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId "pro.midev.obninskname.huawei"
-        minSdkVersion 26
+        minSdkVersion 23
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -34,12 +34,12 @@ android {
     buildTypes {
         debug {
             buildConfigField "String", "SERVER_URL", '"http://obninsk.name/"'
-            buildConfigField "String", "MAP_API_KEY", '"CgB6e3x9Wo6s7nCV+3lbssmZs2m5uBNhciL2E3yHZriRzLRoxENORud4P8bTJRl4pEhLEfud3LSzivaE0bp9BQzh"'
+            buildConfigField "String", "API_KEY", '"CgB6e3x9Wo6s7nCV+3lbssmZs2m5uBNhciL2E3yHZriRzLRoxENORud4P8bTJRl4pEhLEfud3LSzivaE0bp9BQzh"'
             versionNameSuffix "-debug"
         }
         release {
             buildConfigField "String", "SERVER_URL", '"http://obninsk.name/"'
-            buildConfigField "String", "MAP_API_KEY", '"CgB6e3x9Wo6s7nCV+3lbssmZs2m5uBNhciL2E3yHZriRzLRoxENORud4P8bTJRl4pEhLEfud3LSzivaE0bp9BQzh"'
+            buildConfigField "String", "API_KEY", '"CgB6e3x9Wo6s7nCV+3lbssmZs2m5uBNhciL2E3yHZriRzLRoxENORud4P8bTJRl4pEhLEfud3LSzivaE0bp9BQzh"'
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
@@ -99,6 +99,7 @@ dependencies {
     implementation 'com.huawei.hms:hianalytics:5.0.4.300'
     implementation 'com.huawei.agconnect:agconnect-crash:1.4.1.300'
     implementation 'com.huawei.hms:push:5.0.0.300'
+    implementation 'com.huawei.hms:ml-computer-translate:2.0.4.300'
 
     implementation 'com.jakewharton.timber:timber:4.7.1'
 

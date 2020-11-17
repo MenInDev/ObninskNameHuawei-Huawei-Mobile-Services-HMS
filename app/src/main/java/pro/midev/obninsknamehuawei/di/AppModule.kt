@@ -2,6 +2,9 @@ package pro.midev.obninsknamehuawei.di
 
 import com.huawei.hms.analytics.HiAnalytics
 import com.huawei.hms.analytics.HiAnalyticsTools
+import com.huawei.hms.mlsdk.common.MLApplication
+import com.huawei.hms.mlsdk.translate.MLTranslatorFactory
+import com.huawei.hms.mlsdk.translate.cloud.MLRemoteTranslateSetting
 import com.midev.obninsknamehuawei.BuildConfig
 import hu.akarnokd.rxjava3.retrofit.RxJava3CallAdapterFactory
 import okhttp3.OkHttpClient
@@ -56,5 +59,15 @@ val appModule = module {
 
     single {
         BottomVisibilityController()
+    }
+
+    single {
+        MLApplication.getInstance().apiKey = BuildConfig.API_KEY
+        val settings = MLRemoteTranslateSetting
+            .Factory()
+            .setSourceLangCode("ru")
+            .setTargetLangCode("en")
+            .create()
+        MLTranslatorFactory.getInstance().getRemoteTranslator(settings)
     }
 }

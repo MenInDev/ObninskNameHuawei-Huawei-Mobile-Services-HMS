@@ -38,7 +38,7 @@ class UnitsFragment : BaseFragment(R.layout.fragment_map), UnitsView,
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        MapsInitializer.setApiKey(BuildConfig.MAP_API_KEY)
+        MapsInitializer.setApiKey(BuildConfig.API_KEY)
         mapView.onCreate(savedInstanceState)
         mapView.getMapAsync {
             map = it
